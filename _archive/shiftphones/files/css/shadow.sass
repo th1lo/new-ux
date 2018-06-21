@@ -1,0 +1,69 @@
+// defining the relative line width
+// (think of it as a percentage of window width)
+$line-width: 1
+
+// rem value of line width
+$line-width-rem: $line-width * 1rem
+$colors: #77DD77, #966fd6, #f49ac2, #ffb347, #ff6961
+
+// initial element styles
+#el
+  // centering on screen
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  display: block
+
+  // transition on size and shadow
+  transition: width 200ms, height 200ms
+
+  // initial dimensions
+  width: $line-width-rem - 0.1
+  height: $line-width-rem - 0.1
+
+  // hover over the tiny center circle
+  &:hover
+    width: $line-width-rem / 2 - 0.1
+    height: $line-width-rem / 2 - 0.1
+
+  // making it a circle
+  border-radius: 50%
+
+  // initial color
+  background: nth($colors, 1)
+
+// 1rem = 1% viewport width
+html
+  font-size: 1vw
+
+// number of shadows to generate
+$line-count: 49 / $line-width
+
+// initial shadow list
+$shadow: 0px $line-width-rem 0px 0px nth($colors, 1), 0px (-$line-width-rem) 0px 0px nth($colors, 1), 0px ($line-width-rem * 2) 0px 0px nth($colors, 1), 0px (-$line-width-rem * 2) 0px 0px nth($colors, 1), 0px ($line-width-rem * 3) 0px 0px nth($colors, 1), 0px (-$line-width-rem * 3) 0px 0px nth($colors, 1)
+
+// for each line
+@for $b from 1 through $line-count
+  // unique color
+  $color: nth($colors, $b % 5 + 1)
+
+  // x axis right
+  $shadow: append($shadow, ($line-width-rem * $b) 0px 0px 0px $color, comma)
+
+  // x axis left
+  $shadow: append($shadow, (-$line-width-rem * ($line-count - $b + 1)) 0px 0px 0px $color, comma)
+
+  // each row
+  @for $s from 1 through 3
+    $di: $line-width-rem
+    $shad: ($di * $b) ($di * $s) 0px 0px $color, (-$di * ($line-count - $b + 1)) ($di * $s) 0px 0px $color, ($di * $b) (-$di * $s) 0px 0px $color, (-$di * ($line-count - $b + 1)) (-$di * $s) 0px 0px $color
+
+    $shadow: append($shadow, $shad, comma)
+
+body
+  background: white
+
+  // add box shadow to our element
+  #el
+    box-shadow: $shadow

@@ -1,0 +1,310 @@
+/* Stylesheet http://www.ux-king.com */
+
+$light-blue: #443AFF
+$breakpoints: (phone: 400px, phablet: 550px, tablet: 750px, desktop-small: 960px, desktop: 1000px, desktop-large: 1200px,retina2x: ("(-webkit-min-device-pixel-ratio: 2)", "(min-resolution: 192dpi)")) !default
+
+@import 'include-media'
+@import 'macbook'
+
+.header
+  .container
+    .logo
+      +media(">tablet")
+        float: left
+    .navigation
+      text-align: center
+      +media(">tablet")
+        float: right
+      .contacts a
+        text-decoration: none
+        text-indent: 0px
+        display: inline-block
+        text-align: left
+        font-size: .85em
+        color: #333
+        transition: all 0.2s ease
+        line-height: 4
+        +media(">tablet")
+          text-indent: 40px
+          font-size: 1em
+        &:first-child
+          background: none
+          //background: url("../../assets/img/headset.svg") left (center / 14px) 14px no-repeat
+          margin-right: 30px
+          -webkit-filter: grayscale(1)
+          filter: grayscale(1)
+          +media(">tablet")
+            background: url("../../assets/img/headset.svg") left (center / 24px) 24px no-repeat
+            -webkit-filter: grayscale(0)
+            filter: grayscale(0)
+        &:last-child
+          background: none
+          //ackground: url("../../assets/img/mail.svg") left (center / 14px) 10px no-repeat
+          -webkit-filter: grayscale(1)
+          filter: grayscale(1)
+          +media(">tablet")
+            background: url("../../assets/img/mail.svg") left (center / 24px) 17px no-repeat
+            -webkit-filter: grayscale(0)
+            filter: grayscale(0)
+
+
+.hero
+  margin-bottom: 0
+  margin-top: 10%
+  transition: all 0.2s ease
+  +media(">tablet")
+    margin-top: 3%
+
+  .client h1
+    text-align: center
+    font-size: 2.5em
+    a
+      background: url("../../assets/img/external.svg") right (center / 14px) 12px no-repeat
+      text-decoration: none
+      color: #222
+      padding-top: 10px
+      padding-right: 20px
+  h2
+    text-align: center
+    font-size: 1em
+    font-weight: 200
+    margin-bottom: 50px
+    line-height: 1.7em
+    +media(">tablet")
+      font-size: 1.5em
+      margin-bottom: 80px
+
+#cinestar
+  .hero
+    max-height: 500px
+    overflow: hidden
+    +media(">=phablet")
+      max-height: 300px
+    +media(">=tablet")
+      max-height: 500px
+    .one-half.column
+      &:first-child
+        text-align: center
+      &:last-child
+        padding: 8rem 0 0 0
+        height: 100%
+        +media(">=tablet")
+          padding: 16rem 0 0 0
+    .client.first
+      vertical-align: middle
+      &:first-child
+        display: inline-block
+        +media(">=phablet")
+          display: none
+    .client.second
+      &:last-child
+        display: none
+        +media(">=phablet")
+          display: inline-block
+      h1
+        display: inline-block
+        +media(">=phablet")
+          text-align: left
+
+      h2
+        display: inline-block
+        text-align: left
+    .marvel-device.iphone5s.black
+      z-index: -1
+      -webkit-transition: transform 0.5s ease-in
+      transition: transform 0.5s ease-in
+      -webkit-transform: scale(0.7)
+      transform: scale(0.7)
+      margin: -50% 0 0 -15%
+      +media(">=360px")
+        margin: -40% 0 0 -7%
+      +media(">=375px")
+        margin: -30% 0 0 -5%
+      +media(">=phablet")
+        margin: -160px 0 0 -25%
+        -webkit-transform: scale(0.5)
+        transform: scale(0.5)
+      +media(">=tablet")
+        -webkit-transform: scale(0.6)
+        transform: scale(0.6)
+        margin: -10% 0 0 -5%
+      +media(">=768px")
+        -webkit-transform: scale(0.8)
+        transform: scale(0.8)
+        margin: -10% 0 0 -15%
+      +media(">=780px")
+        -webkit-transform: scale(0.8)
+        transform: scale(0.8)
+        margin: -10% 0 0 -10%
+      +media(">=desktop")
+        -webkit-transform: scale(0.8)
+        transform: scale(0.8)
+        margin: -10% 0 0 10%
+
+#cinestar
+  .redesign-concept-mobile
+    background: #FFF
+    height: 100%
+    padding: 5% 0
+    img
+      image-rendering: -webkit-optimize-contrast
+      width: 80%
+      display: block
+      margin: 10% auto 10% auto
+      box-shadow: 0 30px 100px 0 rgba(0,0,0,0.1)
+      +media(">tablet")
+        width: 50%
+
+#cinestar
+  .redesign-concept
+    padding: 7% 0 7% 0
+
+#cinestar
+  .redesign-concept
+    &:nth-child(5)
+      padding: 3% 0 2% 0
+    .socials
+      margin: 0 auto
+
+
+.redesign-concept
+  padding: 20% 0 25% 0
+  background: $light-blue
+  z-index: 5
+  +media(">tablet")
+    padding: 10% 0 5% 0
+  h1
+    color: rgba(0,0,0,.8)
+    font-weight: 400
+    font-size: 1.75em
+    font-family: 'Space Mono', monospace
+    margin-bottom: 20px
+    +media(">tablet")
+      margin-bottom: 50px
+      font-size: 2em
+  .intro
+    text-align: center
+    p
+      color: #fff
+      font-family: 'Karla', sans-serif
+      text-align: center
+      font-size: 1em
+      font-weight: 200
+      margin-bottom: 50px
+      +media(">tablet")
+        font-size: 1.5em
+    a
+      margin: 70px 0 0 0
+      background: rgba(255,255,255,.5)
+      border-radius: 30px
+      color: $light-blue
+      padding: 10px 20px
+      text-decoration: none
+      transition: all 0.2s ease
+      &:hover
+        background: rgba(255,255,255,1)
+    img
+      margin-top: 10%
+      width: 100%
+      box-shadow: 0 30px 100px 0 rgba(0,0,0,0.1)
+  .socials
+    width: 94px
+    margin: 70px auto 0 auto
+    .facebook
+      margin-right: 30px
+      display: inline-block
+      width: 32px
+      height: 32px
+      background: url("../../assets/img/facebook.svg") center center no-repeat
+    .linkedin
+      margin-right: 30px
+      display: inline-block
+      width: 32px
+      height: 32px
+      background: url("../../assets/img/linkedin.svg") center center no-repeat
+    .dribbble
+      display: inline-block
+      width: 32px
+      height: 32px
+      background: url("../../assets/img/dribbble.svg") center center no-repeat
+    .twitter
+      display: inline-block
+      width: 32px
+      height: 32px
+      background: url("../../assets/img/twitter.svg") center center no-repeat
+  .imprint
+    text-align: center
+    margin: 70px 0 0 0
+    a
+      text-align: center
+      text-decoration: none
+      color: rgba(0,0,0,.5)
+
+.section.cases
+  text-align: center
+  padding: 13% 0 13% 0
+  +media(">desktop-small")
+    text-align: left
+    padding: 6% 0 6% 0
+  .one-half.column
+    img
+      width: 100%
+      margin-top: 30px
+      box-shadow: 0 30px 100px 0 rgba(0,0,0,0.1)
+    .info
+      margin: 95px 30px
+      overflow: hidden
+      p
+        a
+          font-family: 'Space Mono', monospace
+          font-size: 1.5rem
+          display: block
+          width: 60%
+          padding: 10px 20px
+          text-align: center
+          text-decoration: none
+          margin: 30px auto
+          border-radius: 30px
+          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1)
+          transition: all 0.1s ease
+          +media(">desktop-small")
+            margin: 30px 0
+          &:hover
+            box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2)
+  &:nth-child(odd)
+    background: $light-blue
+    .one-half.column
+      &:first-child
+        overflow: hidden
+    h4
+      color: #fff
+      font-size: 1.75em
+      font-family: 'Space Mono', monospace
+    p
+      color: #fff
+      a
+        background: #fff
+        color: $light-blue
+  &:nth-child(even)
+    background: #fff
+    h4
+      font-size: 1.75em
+      font-family: 'Space Mono', monospace
+    p
+      a
+        background: $light-blue
+        color: #fff
+    .one-half.column
+      &:first-child
+        float: right
+        margin-left: 4%
+      &:last-child
+        float: left
+        margin-left: 0
+  .container
+    .row
+      &:nth-child(odd)
+        // Left
+      &:nth-child(even)
+        // Right
+      .one-half.column

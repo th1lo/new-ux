@@ -1,0 +1,120 @@
+/* Stylesheet http://www.ux-king.com */
+
+$light-blue: #443AFF
+$breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
+
+@import 'include-media'
+@import 'macbook'
+
+.header
+  .container
+    .logo
+      +media(">tablet")
+        float: left
+    .navigation
+      text-align: center
+      +media(">tablet")
+        float: right
+      .contacts a
+        text-decoration: none
+        text-indent: 0px
+        display: inline-block
+        text-align: left
+        font-size: .85em
+        color: #333
+        transition: all 0.2s ease
+        line-height: 4
+        +media(">tablet")
+          text-indent: 40px
+          font-size: 1em
+        &:first-child
+          background: none
+          //background: url("../../assets/img/headset.svg") left (center / 14px) 14px no-repeat
+          margin-right: 30px
+          -webkit-filter: grayscale(1)
+          filter: grayscale(1)
+          +media(">tablet")
+            background: url("../../assets/img/headset.svg") left (center / 24px) 24px no-repeat
+            -webkit-filter: grayscale(0)
+            filter: grayscale(0)
+        &:last-child
+          background: none
+          //ackground: url("../../assets/img/mail.svg") left (center / 14px) 10px no-repeat
+          -webkit-filter: grayscale(1)
+          filter: grayscale(1)
+          +media(">tablet")
+            background: url("../../assets/img/mail.svg") left (center / 24px) 17px no-repeat
+            -webkit-filter: grayscale(0)
+            filter: grayscale(0)
+
+
+.hero
+  margin-bottom: 0
+  margin-top: 10%
+  transition: all 0.2s ease
+  +media(">tablet")
+    margin-top: 3%
+
+  .client h1
+    text-align: center
+    font-size: 2.5em
+    a
+      background: url("../../assets/img/external.svg") right (center / 14px) 12px no-repeat
+      text-decoration: none
+      color: #222
+      padding-top: 10px
+      padding-right: 20px
+  h2
+    text-align: center
+    font-size: 1.75em
+    font-weight: 200
+    margin-bottom: 80px
+
+.redesign-concept
+  padding: 20% 0 25% 0
+  background: $light-blue
+  +media(">tablet")
+    padding: 10% 0 5% 0
+  h1
+    color: rgba(0,0,0,.5)
+    font-weight: 400
+    font-size: 1.75em
+    font-family: 'Space Mono', monospace
+    margin-bottom: 20px
+  .intro
+    color: #fff
+    font-family: 'Karla', sans-serif
+    text-align: center
+    font-size: .9em
+    font-weight: 200
+    +media(">tablet")
+      font-size: 1.2em
+  img
+    margin-top: 10%
+    width: 100%
+  .socials
+    width: 220px
+    margin: 70px auto 0 auto
+    .facebook
+      margin-right: 30px
+      display: inline-block
+      width: 32px
+      height: 32px
+      background: url("../../assets/img/facebook.svg") center center no-repeat
+    .linkedin
+      margin-right: 30px
+      display: inline-block
+      width: 32px
+      height: 32px
+      background: url("../../assets/img/linkedin.svg") center center no-repeat
+    .dribbble
+      margin-right: 30px
+      display: inline-block
+      width: 32px
+      height: 32px
+      background: url("../../assets/img/dribbble.svg") center center no-repeat
+    .twitter
+      display: inline-block
+      width: 32px
+      height: 32px
+      background: url("../../assets/img/twitter.svg") center center no-repeat
